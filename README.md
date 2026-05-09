@@ -1,6 +1,6 @@
 # TraceKit Pro
 
-![TraceKit — redirect tracing](store-assets/ss01-trace.png)
+![TraceKit — redirect tracing](store-assets/banner.png)
 
 **Reveal the full redirect chain behind any link. Spot affiliate networks, tracking parameters, and the real final URL — instantly.**
 
