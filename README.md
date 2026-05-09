@@ -4,6 +4,8 @@
 
 **Reveal the full redirect chain behind any link. Spot affiliate networks, tracking parameters, and the real final URL — instantly.**
 
+[![Buy Pro — $9 one-time](https://img.shields.io/badge/Buy%20Pro-%249%20one--time-7C6DFA?style=for-the-badge&logo=stripe&logoColor=white)](https://buy.stripe.com/14A8wO840goe56t1QD4ow04)
+
 A Chrome extension that traces every hop in a URL's redirect chain, identifies known affiliate networks (Impact, ShareASale, CJ, Awin, Rakuten, PartnerStack, Amazon Associates, Skimlinks, and 40+ more), strips tracking parameters, and surfaces the clean destination — all without leaving your browser.
 
 > **Built for** affiliate marketers auditing competitor links · SEO professionals checking redirect chains for crawl waste · journalists tracing sponsored links · privacy-conscious users who want to know where a link actually goes before clicking.
