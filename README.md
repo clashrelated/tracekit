@@ -50,12 +50,14 @@ Trace history (Pro feature) lives in `chrome.storage.local` — never synced any
 
 **From the Chrome Web Store:** *(submission in progress)*
 
-**From source (developer install):**
+**Load unpacked (developer install):**
 
-1. Clone this repo
+1. [Download TraceKit.zip](https://github.com/clashrelated/tracekit/releases/latest/download/TraceKit.zip) and unzip it
 2. Open `chrome://extensions`
-3. Toggle on "Developer mode" (top-right)
-4. Click "Load unpacked" and select this directory
+3. Toggle on **Developer mode** (top-right)
+4. Click **Load unpacked** → select the unzipped folder
+
+> Don't use GitHub's "Download ZIP" button — it includes extra files and a nested folder that Chrome won't accept.
 
 ---
 
