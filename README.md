@@ -1,4 +1,4 @@
-# TraceKit Pro
+# TraceKit — Redirect & Affiliate Inspector
 
 ![TraceKit — redirect tracing](store-assets/banner.png)
 
