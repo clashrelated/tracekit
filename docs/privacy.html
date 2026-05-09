@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — TraceKit</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+      background: #0E0E10;
+      color: #ECEEF3;
+      line-height: 1.7;
+      padding: 48px 24px 80px;
+    }
+    .wrap { max-width: 680px; margin: 0 auto; }
+    .logo { display: flex; align-items: center; gap: 10px; margin-bottom: 48px; }
+    .logo-icon {
+      width: 36px; height: 36px; border-radius: 10px;
+      background: linear-gradient(135deg, #7C6DFA, #5B4FD6);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .logo-icon svg { width: 20px; height: 20px; }
+    .logo-name { font-size: 18px; font-weight: 700; color: #ECEEF3; }
+    h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.3px; }
+    .updated { font-size: 13px; color: #9AA0AC; margin-bottom: 40px; }
+    h2 { font-size: 16px; font-weight: 600; color: #ECEEF3; margin: 36px 0 10px; }
+    p { font-size: 15px; color: #9AA0AC; margin-bottom: 12px; }
+    ul { list-style: none; padding: 0; margin-bottom: 12px; }
+    ul li { font-size: 15px; color: #9AA0AC; padding: 4px 0 4px 18px; position: relative; }
+    ul li::before { content: '–'; position: absolute; left: 0; color: #5E6371; }
+    a { color: #7C6DFA; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .highlight {
+      background: #1A1A1F; border: 1px solid #25252F; border-radius: 10px;
+      padding: 16px 20px; margin: 24px 0;
+    }
+    .highlight p { margin: 0; color: #ECEEF3; font-size: 15px; }
+    hr { border: none; border-top: 1px solid #1E1E26; margin: 40px 0; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="logo">
+    <div class="logo-icon">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M10 13a4 4 0 005.66 0l3-3a4 4 0 00-5.66-5.66l-1 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M14 11a4 4 0 00-5.66 0l-3 3a4 4 0 005.66 5.66l1-1" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <span class="logo-name">TraceKit</span>
+  </div>
+
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: May 9, 2026</p>
+
+  <div class="highlight">
+    <p><strong>Short version:</strong> TraceKit does not collect, store, or share your browsing data or the URLs you trace. Everything runs locally in your browser.</p>
+  </div>
+
+  <h2>What TraceKit does</h2>
+  <p>TraceKit is a Chrome extension that follows redirect chains for URLs you provide, identifies affiliate networks and tracking parameters, and shows you the final destination — entirely within your browser.</p>
+
+  <h2>Data we do NOT collect</h2>
+  <ul>
+    <li>URLs you trace or paste into the extension</li>
+    <li>Your browsing history or activity</li>
+    <li>Any personally identifiable information</li>
+    <li>Cookies, form data, or page content</li>
+  </ul>
+
+  <h2>Data stored locally on your device</h2>
+  <p>TraceKit stores the following in <code>chrome.storage.local</code> — on your device only, never transmitted to us:</p>
+  <ul>
+    <li><strong>Trace history</strong> (Pro) — the last 50 traces you've run, stored so you can revisit results</li>
+    <li><strong>Settings</strong> — your preferences (auto-trace toggle, webhook URL, etc.)</li>
+    <li><strong>License status</strong> — whether your Pro license has been verified</li>
+  </ul>
+  <p>You can clear this data at any time by clicking "Clear history" inside the extension or by removing the extension from Chrome.</p>
+
+  <h2>License verification (Pro only)</h2>
+  <p>When you enter a license key to unlock Pro features, the extension sends <strong>only your license key</strong> to our verification server (<code>extensions-licenses.vercel.app</code>) to confirm it is valid. No browsing data, URLs, or personal information is sent. Once verified, Pro works offline — the verification server is not contacted again unless you re-enter your key.</p>
+
+  <h2>Webhook (Pro, opt-in)</h2>
+  <p>If you configure a webhook URL in Settings, TraceKit will send trace results to that URL when you trigger a trace. This is an entirely opt-in feature — no data is sent anywhere by default. The webhook endpoint is one you configure and control.</p>
+
+  <h2>Redirect tracing</h2>
+  <p>When you trace a URL, your browser makes HTTP requests directly to the destination servers — the same requests your browser would make if you clicked the link. These requests originate from your IP address. TraceKit does not proxy, intercept, or log these requests.</p>
+
+  <h2>Third-party services</h2>
+  <ul>
+    <li><strong>Stripe</strong> — used to process one-time Pro purchases. Stripe's privacy policy applies at checkout.</li>
+    <li><strong>Vercel</strong> — hosts our license verification API. Only your license key is processed.</li>
+  </ul>
+
+  <h2>Children's privacy</h2>
+  <p>TraceKit is not directed at children under 13 and does not knowingly collect information from them.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If we make material changes to this policy, we will update the date above. Continued use of the extension after changes constitutes acceptance.</p>
+
+  <h2>Contact</h2>
+  <p>Questions? Open an issue at <a href="https://github.com/clashrelated/tracekit/issues" target="_blank">github.com/clashrelated/tracekit</a> or email <a href="mailto:bhabishyabhattnepal@gmail.com">bhabishyabhattnepal@gmail.com</a>.</p>
+
+  <hr>
+  <p style="font-size:13px; color:#5E6371;">© 2026 TraceKit. All rights reserved.</p>
+
+</div>
+</body>
+</html>
