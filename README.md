@@ -23,12 +23,14 @@ A Chrome extension that traces every hop in a URL's redirect chain, identifies k
 - HTTP `Refresh:` header following (handles Facebook `l.php`-style interstitials)
 
 ### Pro (one-time $9 unlock)
-- **Deep trace** — opens the URL in an isolated incognito window and follows JavaScript-driven redirects too (Auth0, Clerk, Firebase, custom session checks). HTTP-only tracers can't see these.
-- **Bulk trace** — paste up to 10 URLs, trace them all sequentially
-- **Trace history** — last 50 traces stored locally, click to re-render
-- **Auto-trace mode** — opt-in content script that highlights affiliate / tracking links on every page you visit, with detection running entirely client-side
-- **Export** — JSON or CSV, single trace or whole bulk batch
-- **Increased hop limit** — 25 instead of 15
+- **Deep trace** — opens the URL in an isolated background tab and follows JavaScript-driven redirects (Auth0, Clerk, Firebase, custom session checks) that HTTP-only tracers can't see
+- **Bulk trace** — paste up to 10 URLs and trace them all at once
+- **Page link scanner** — scans the active tab and surfaces every affiliate, shortener, and tracking link on the page before you click any of them
+- **Skip redirects on click** — automatically navigates to the final destination when you click tracked links, bypassing the redirect chain entirely
+- **Side-by-side compare** — diff two redirect chains and spot where they diverge
+- **Trace history** — last 50 traces stored locally; recent traces shown on the home screen
+- **Export** — JSON or CSV, per-trace or bulk batch
+- **Webhook** — push trace results to any endpoint automatically or on demand
 
 ---
 
@@ -73,7 +75,7 @@ utils/
 ├── params.js              → UTM + click-ID stripping
 ├── license.js             → Pro state, license verify, device-ID per Chrome installation
 ├── history.js             → trace history persistence (chrome.storage.local, 50-entry cap)
-└── settings.js            → Pro feature toggles (auto-trace)
+└── settings.js            → user settings (auto-trace, skip-redirects, webhook URL, etc.)
 ```
 
 ### How redirect tracing actually works
