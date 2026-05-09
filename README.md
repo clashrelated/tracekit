@@ -89,8 +89,6 @@ utils/
 - **JS-driven redirects (Pro deep trace)** — the URL is opened in an isolated incognito window with `chrome.windows.create({ incognito: true, ... })`, listeners are attached to that window's tabId, and the actual navigation is triggered via `chrome.tabs.update` (after listeners are armed, to avoid the race condition where fast pages load before observation). When navigation settles, the window is closed.
 - **Affiliate detection** — pure URL pattern matching against a curated list. No external API calls.
 
-The licensing backend (a separate repo: `clashrelated/extensions-licenses`) is a tiny Vercel Functions API — Stripe webhook → Upstash Redis → Resend email — used purely for license-key verification.
-
 ---
 
 ## Development
