@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TraceKit — Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="tk-shell">
+    <header class="tk-header">
+      <div class="tk-brand">
+        <svg class="tk-logo" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+          <defs>
+            <mask id="tk-options-logo-cut">
+              <rect width="128" height="128" fill="white"/>
+              <g transform="rotate(-45 80 70)">
+                <rect x="52" y="59" width="56" height="22" rx="11" fill="black"/>
+              </g>
+            </mask>
+          </defs>
+          <g mask="url(#tk-options-logo-cut)">
+            <g transform="rotate(45 48 58)">
+              <rect x="20" y="44" width="56" height="28" rx="14"
+                    stroke="currentColor" stroke-width="11" fill="none" stroke-linejoin="round"/>
+            </g>
+          </g>
+          <g transform="rotate(-45 80 70)">
+            <rect x="52" y="56" width="56" height="28" rx="14"
+                  stroke="currentColor" stroke-width="11" fill="none" stroke-linejoin="round"/>
+          </g>
+        </svg>
+        <div>
+          <div class="tk-brand-name">TraceKit</div>
+          <div class="tk-brand-tag">Settings</div>
+        </div>
+      </div>
+      <div class="tk-version" id="version-tag">v0.1.0</div>
+    </header>
+
+    <main class="tk-main">
+
+      <!-- Pro status card -->
+      <section class="tk-status-card" id="status-card" data-state="free">
+        <div class="tk-status-icon" aria-hidden="true">
+          <svg class="icon-free" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M12 8v5M12 16.5v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <svg class="icon-pro" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M8 12l3 3 5-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <div class="tk-status-body">
+          <div class="tk-status-title" id="status-title">Free tier</div>
+          <div class="tk-status-sub" id="status-sub">All core features active. No account needed.</div>
+
+          <div class="tk-status-actions" id="status-actions">
+            <button class="tk-btn tk-btn-primary" id="upgrade-btn" type="button">
+              Upgrade to Pro — $9 one-time
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M14 5h5v5M19 5L10 14M19 14v5H5V5h5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <button class="tk-btn tk-btn-ghost" id="manage-btn" type="button" hidden>Remove license</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- License input -->
+      <section class="tk-license" id="license-section">
+        <label class="tk-section-label" for="license-input">License key</label>
+        <div class="tk-license-row">
+          <input
+            type="text"
+            class="tk-input"
+            id="license-input"
+            placeholder="Paste your license key…"
+            spellcheck="false"
+            autocapitalize="off"
+            autocorrect="off"
+          />
+          <button class="tk-btn tk-btn-solid" id="verify-btn" type="button">Verify</button>
+        </div>
+        <div class="tk-license-feedback" id="license-feedback" role="status" aria-live="polite"></div>
+        <p class="tk-section-hint">
+          One-time purchase. After paying, your key is emailed to you. Paste it above and hit Verify — works offline after first verification.
+        </p>
+      </section>
+
+      <!-- Pro features -->
+      <section class="tk-features">
+        <div class="tk-section-label">Pro features</div>
+        <ul class="tk-feature-list" id="feature-list">
+          <li><span class="tk-feature-name">Export chains as JSON / CSV</span></li>
+          <li><span class="tk-feature-name">Bulk-trace up to 10 URLs</span></li>
+          <li><span class="tk-feature-name">Page link scanner — scan any page for affiliate & tracking links</span></li>
+          <li><span class="tk-feature-name">Headers & cookies inspection per hop</span></li>
+          <li><span class="tk-feature-name">Side-by-side URL comparison with diff</span></li>
+          <li><span class="tk-feature-name">Trace export to webhook</span></li>
+          <li><span class="tk-feature-name">Auto-trace mode (highlight tracking links on any page)</span></li>
+          <li><span class="tk-feature-name">Skip redirects on click — jump straight to the final destination</span></li>
+          <li><span class="tk-feature-name">Trace history (last 50)</span></li>
+          <li><span class="tk-feature-name">Increased hop limit (25 instead of 15)</span></li>
+        </ul>
+      </section>
+
+      <!-- Pro settings (toggles) -->
+      <section class="tk-toggles" id="toggles-section">
+        <div class="tk-section-label">Pro settings</div>
+
+        <label class="tk-toggle" id="autotrace-toggle">
+          <div class="tk-toggle-body">
+            <div class="tk-toggle-title">Auto-trace mode</div>
+            <div class="tk-toggle-sub">Highlight affiliate / tracking links on every page you visit. Detection runs locally — no network calls.</div>
+          </div>
+          <span class="tk-switch" aria-hidden="true">
+            <input type="checkbox" id="autotrace-input" disabled>
+            <span class="tk-switch-track"></span>
+          </span>
+        </label>
+        <div class="tk-toggle-hint" id="autotrace-hint" hidden>Unlock Pro to enable.</div>
+
+        <label class="tk-toggle" id="incognito-toggle" style="margin-top: 10px;">
+          <div class="tk-toggle-body">
+            <div class="tk-toggle-title">Incognito deep trace</div>
+            <div class="tk-toggle-sub">Run deep trace in an isolated incognito window so cookies and history stay clean. Note: on macOS this may briefly switch Spaces and close the popup. Off by default for smoother UX.</div>
+          </div>
+          <span class="tk-switch" aria-hidden="true">
+            <input type="checkbox" id="incognito-input" disabled>
+            <span class="tk-switch-track"></span>
+          </span>
+        </label>
+        <div class="tk-toggle-hint" id="incognito-hint" hidden>Unlock Pro to enable.</div>
+
+        <label class="tk-toggle" id="webhook-button-toggle" style="margin-top: 10px;">
+          <div class="tk-toggle-body">
+            <div class="tk-toggle-title">Show webhook button in extension</div>
+            <div class="tk-toggle-sub">When on, a manual "Send to webhook" button appears in trace results. When off with a URL set, traces are posted automatically after each trace.</div>
+          </div>
+          <span class="tk-switch" aria-hidden="true">
+            <input type="checkbox" id="webhook-button-input" disabled>
+            <span class="tk-switch-track"></span>
+          </span>
+        </label>
+        <div class="tk-toggle-hint" id="webhook-button-hint" hidden>Unlock Pro to enable.</div>
+
+        <label class="tk-toggle" id="skip-redirect-toggle" style="margin-top: 10px;">
+          <div class="tk-toggle-body">
+            <div class="tk-toggle-title">Skip redirects on click</div>
+            <div class="tk-toggle-sub">When you click a shortener or affiliate link, TraceKit resolves the final destination and takes you there directly — skipping every intermediate hop.</div>
+          </div>
+          <span class="tk-switch" aria-hidden="true">
+            <input type="checkbox" id="skip-redirect-input" disabled>
+            <span class="tk-switch-track"></span>
+          </span>
+        </label>
+        <div class="tk-toggle-hint" id="skip-redirect-hint" hidden>Unlock Pro to enable.</div>
+
+        <div class="tk-webhook-group" id="webhook-group" style="margin-top: 10px;">
+          <label class="tk-section-label" for="webhook-url-input">Webhook URL</label>
+          <div class="tk-license-row">
+            <input
+              type="url"
+              class="tk-input"
+              id="webhook-url-input"
+              placeholder="https://your-server.com/webhook"
+              spellcheck="false"
+              autocapitalize="off"
+              autocorrect="off"
+              disabled
+            />
+            <button class="tk-btn tk-btn-solid" id="webhook-save-btn" type="button" disabled>Save</button>
+          </div>
+          <div class="tk-license-feedback" id="webhook-feedback" role="status" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <!-- About / privacy -->
+      <section class="tk-about">
+        <div class="tk-section-label">Privacy</div>
+        <p class="tk-section-hint">
+          TraceKit runs entirely in your browser. URLs you trace are never sent to TraceKit's developer or any third party.
+          License verification sends only your key (no browsing data) to the licensing server.
+        </p>
+      </section>
+
+    </main>
+
+    <footer class="tk-footer">
+      <a class="tk-footer-link" href="https://ko-fi.com" target="_blank" rel="noopener">Tip on Ko-fi</a>
+      <span class="tk-footer-dot">·</span>
+      <a class="tk-footer-link" href="#" id="privacy-link" target="_blank" rel="noopener">Privacy policy</a>
+      <span class="tk-footer-dot">·</span>
+      <span class="tk-footer-meta" id="footer-version">v0.1.0</span>
+    </footer>
+  </div>
+
+  <script type="module" src="options.js"></script>
+</body>
+</html>

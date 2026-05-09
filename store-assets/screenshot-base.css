@@ -1,0 +1,110 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 1280px;
+  height: 800px;
+  overflow: hidden;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background: #080809;
+}
+.scene {
+  width: 1280px;
+  height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+}
+.blob-1 { width: 500px; height: 500px; background: #7C6DFA; opacity: 0.12; top: -100px; left: -80px; }
+.blob-2 { width: 400px; height: 400px; background: #3B82F6; opacity: 0.07; bottom: -80px; right: 100px; }
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(124,109,250,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124,109,250,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* panel shell — mimics side panel chrome */
+.panel-shell {
+  position: relative;
+  z-index: 1;
+  width: 400px;
+  height: 740px;
+  background: #0E0E10;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(124,109,250,0.15),
+    0 32px 80px rgba(0,0,0,0.7),
+    0 0 60px rgba(124,109,250,0.08);
+}
+
+/* caption block to the left */
+.caption {
+  position: relative;
+  z-index: 1;
+  width: 340px;
+  margin-right: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.caption-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #7C6DFA;
+  background: rgba(124,109,250,0.12);
+  border: 1px solid rgba(124,109,250,0.25);
+  border-radius: 20px;
+  padding: 4px 12px;
+  align-self: flex-start;
+}
+.caption-title {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #ECEEF3;
+  line-height: 1.15;
+}
+.caption-title em {
+  font-style: normal;
+  color: #7C6DFA;
+}
+.caption-body { display: none; }
+.caption-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 2px;
+}
+.caption-bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: #9AA0AC;
+  line-height: 1.5;
+}
+.caption-bullets li::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #7C6DFA;
+  margin-top: 6px;
+  flex-shrink: 0;
+}

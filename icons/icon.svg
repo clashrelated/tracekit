@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9587FF"/>
+      <stop offset="100%" stop-color="#5847E5"/>
+    </linearGradient>
+    <!-- Cut a notch out of the back link where the front link crosses it,
+         to fake the "passing through" effect of an interlocked chain. -->
+    <mask id="cutBack">
+      <rect width="128" height="128" fill="white"/>
+      <!-- Black band along the front link's center, slightly wider than its stroke,
+           so the back link's stroke disappears there. -->
+      <g transform="rotate(-45 80 70)">
+        <rect x="52" y="59" width="56" height="22" rx="11" fill="black"/>
+      </g>
+    </mask>
+  </defs>
+
+  <!-- Background -->
+  <rect width="128" height="128" rx="28" fill="url(#bg)"/>
+
+  <!-- Back link (rotated 45° / "/" direction), upper-left, partly hidden where front crosses -->
+  <g mask="url(#cutBack)">
+    <g transform="rotate(45 48 58)">
+      <rect x="20" y="44" width="56" height="28" rx="14"
+            stroke="white" stroke-width="9" fill="none" stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <!-- Front link (rotated -45° / "\" direction), lower-right, drawn on top -->
+  <g transform="rotate(-45 80 70)">
+    <rect x="52" y="56" width="56" height="28" rx="14"
+          stroke="white" stroke-width="9" fill="none" stroke-linejoin="round"/>
+  </g>
+</svg>

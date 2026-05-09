@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="screenshot-base.css">
+<style>
+  /* --- panel internals --- */
+  .tk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 16px 12px;
+    border-bottom: 1px solid #1E1E26;
+  }
+  .tk-logo { display: flex; align-items: center; gap: 8px; }
+  .tk-logo svg { width: 20px; height: 20px; }
+  .tk-logo-name { font-size: 15px; font-weight: 700; color: #ECEEF3; letter-spacing: -0.2px; }
+  .tk-pro-pill {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    background: rgba(124,109,250,0.15); color: #7C6DFA;
+    border: 1px solid rgba(124,109,250,0.3); border-radius: 4px; padding: 2px 6px;
+  }
+  .tk-header-right { display: flex; align-items: center; gap: 8px; }
+  .tk-summary {
+    font-size: 12px; font-weight: 600; color: #9AA0AC;
+    background: #1A1A1F; border: 1px solid #25252F; border-radius: 20px;
+    padding: 4px 12px;
+  }
+  .tk-icon-btn { color: #5E6371; background: none; border: none; cursor: pointer; padding: 4px; }
+
+  .tk-body { padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; overflow: hidden; }
+
+  .tk-hop {
+    background: #1A1A1F; border: 1px solid #25252F; border-radius: 10px;
+    padding: 10px 12px; display: flex; flex-direction: column; gap: 6px;
+  }
+  .tk-hop-row1 { display: flex; align-items: center; gap: 8px; }
+  .tk-hop-num { font-size: 11px; color: #5E6371; font-family: 'SF Mono', monospace; font-weight: 600; min-width: 20px; }
+  .tk-badge {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    border-radius: 4px; padding: 2px 6px;
+  }
+  .tk-badge-301 { background: rgba(245,158,11,0.12); color: #F59E0B; }
+  .tk-badge-200 { background: rgba(34,197,94,0.12); color: #22C55E; }
+  .tk-badge-final { background: rgba(34,197,94,0.12); color: #22C55E; border: 1px dashed rgba(34,197,94,0.3); }
+  .tk-hop-ms { font-size: 11px; color: #5E6371; margin-left: auto; }
+  .tk-hop-url {
+    font-size: 11.5px; color: #9AA0AC; font-family: 'SF Mono', monospace;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .tk-hop-tag {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 10px; font-weight: 600; border-radius: 4px; padding: 1px 6px; align-self: flex-start;
+  }
+  .tk-hop-tag-amazon { background: rgba(245,158,11,0.12); color: #F59E0B; }
+
+  .tk-final-card {
+    background: #1A1A1F; border: 1px solid #25252F; border-radius: 10px;
+    padding: 12px; margin-top: 4px;
+  }
+  .tk-final-head {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: #22C55E; margin-bottom: 8px;
+  }
+  .tk-final-url {
+    font-size: 12px; color: #ECEEF3; font-family: 'SF Mono', monospace;
+    word-break: break-all; line-height: 1.5; margin-bottom: 8px;
+  }
+  .tk-tracking-row {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 11px; color: #9AA0AC;
+  }
+  .tk-tracking-badge {
+    font-size: 10px; font-weight: 600; background: rgba(245,158,11,0.12);
+    color: #F59E0B; border-radius: 4px; padding: 1px 6px;
+  }
+
+  .tk-footer {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 16px 16px;
+    background: linear-gradient(to top, #0E0E10 72%, transparent);
+    border-top: 1px solid #1E1E26;
+  }
+  .tk-footer-btn {
+    font-size: 12px; font-weight: 500; color: #9AA0AC;
+    background: none; border: none; cursor: pointer;
+    display: flex; align-items: center; gap: 5px;
+  }
+  .tk-copy-btn {
+    flex: 1; margin: 0 8px;
+    background: #7C6DFA; color: #fff; border: none; border-radius: 8px;
+    font-size: 13px; font-weight: 600; padding: 9px 0; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+  }
+  .tk-open-btn {
+    background: #1A1A1F; color: #ECEEF3; border: 1px solid #25252F;
+    border-radius: 8px; font-size: 13px; font-weight: 600;
+    padding: 9px 14px; cursor: pointer;
+    display: flex; align-items: center; gap: 6px;
+  }
+
+  .tk-btn-row { display: flex; gap: 8px; margin-top: 10px; }
+</style>
+</head>
+<body>
+<div class="scene">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="grid"></div>
+
+  <div class="caption">
+    <span class="caption-badge">Redirect Tracing</span>
+    <h1 class="caption-title">See the full<br>redirect <em>chain</em></h1>
+    <ul class="caption-bullets">
+      <li>Status codes & timing for every hop</li>
+      <li>Detects Amazon, ShareASale, CJ and 40+ networks</li>
+    </ul>
+  </div>
+
+  <div class="panel-shell">
+    <div class="tk-header">
+      <div class="tk-logo">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" fill="#7C6DFA" opacity=".2"/>
+          <path d="M8 12a4 4 0 018 0" stroke="#7C6DFA" stroke-width="2" stroke-linecap="round"/>
+          <path d="M12 8v8M9 15l3 3 3-3" stroke="#7C6DFA" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="tk-logo-name">TraceKit</span>
+        <span class="tk-pro-pill">PRO</span>
+      </div>
+      <div class="tk-header-right">
+        <div class="tk-summary">3 hops · 842ms</div>
+      </div>
+    </div>
+
+    <div class="tk-body">
+      <div class="tk-hop">
+        <div class="tk-hop-row1">
+          <span class="tk-hop-num">01</span>
+          <span class="tk-badge tk-badge-301">301</span>
+          <span class="tk-hop-ms">120ms</span>
+        </div>
+        <div class="tk-hop-url">https://amzn.to/3XyZ9Qk</div>
+      </div>
+
+      <div class="tk-hop">
+        <div class="tk-hop-row1">
+          <span class="tk-hop-num">02</span>
+          <span class="tk-badge tk-badge-301">301</span>
+          <span class="tk-hop-ms">310ms</span>
+        </div>
+        <div class="tk-hop-url">https://www.amazon.com/dp/B09XKM84VP?tag=partner-20&linkCode=ogi…</div>
+        <span class="tk-hop-tag tk-hop-tag-amazon">● Amazon Associates</span>
+      </div>
+
+      <div class="tk-hop">
+        <div class="tk-hop-row1">
+          <span class="tk-hop-num">03</span>
+          <span class="tk-badge tk-badge-200">200</span>
+          <span class="tk-badge tk-badge-final">FINAL</span>
+          <span class="tk-hop-ms">412ms</span>
+        </div>
+        <div class="tk-hop-url">https://www.amazon.com/dp/B09XKM84VP</div>
+      </div>
+
+      <div class="tk-final-card">
+        <div class="tk-final-head">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+            <path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke="#22C55E" stroke-width="2" stroke-linecap="round"/>
+            <path d="M22 4L12 14.01l-3-3" stroke="#22C55E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          FINAL DESTINATION
+        </div>
+        <div class="tk-final-url">https://www.amazon.com/dp/B09XKM84VP</div>
+        <div class="tk-tracking-row">
+          <span>Tracking removed:</span>
+          <span class="tk-tracking-badge">tag=</span>
+          <span class="tk-tracking-badge">linkCode=</span>
+        </div>
+        <div class="tk-btn-row">
+          <button class="tk-copy-btn">Copy clean URL</button>
+          <button class="tk-open-btn">Open</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="tk-footer">
+      <button class="tk-footer-btn">← New trace</button>
+      <button class="tk-footer-btn">↺ Retry</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>

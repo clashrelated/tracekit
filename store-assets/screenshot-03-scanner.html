@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="screenshot-base.css">
+<style>
+  .tk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 16px 12px; border-bottom: 1px solid #1E1E26;
+  }
+  .tk-logo { display: flex; align-items: center; gap: 8px; }
+  .tk-logo-name { font-size: 15px; font-weight: 700; color: #ECEEF3; letter-spacing: -0.2px; }
+  .tk-pro-pill {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    background: rgba(124,109,250,0.15); color: #7C6DFA;
+    border: 1px solid rgba(124,109,250,0.3); border-radius: 4px; padding: 2px 6px;
+  }
+
+  .tk-pane-head {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 16px 0;
+  }
+  .tk-pane-title { font-size: 13px; font-weight: 600; color: #ECEEF3; }
+  .tk-close-btn { font-size: 12px; color: #9AA0AC; border: none; background: none; cursor: pointer; }
+
+  .tk-scanner-summary {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 16px;
+    font-size: 12px; color: #9AA0AC;
+  }
+  .tk-scanner-count {
+    font-size: 12px; font-weight: 700; color: #7C6DFA;
+    background: rgba(124,109,250,0.12); border-radius: 4px; padding: 1px 7px;
+  }
+
+  .tk-scanner-list { padding: 0 16px; display: flex; flex-direction: column; gap: 6px; overflow: hidden; max-height: 480px; }
+
+  .tk-scan-item {
+    background: #1A1A1F; border: 1px solid #25252F; border-radius: 10px;
+    padding: 9px 12px; display: flex; flex-direction: column; gap: 5px;
+  }
+  .tk-scan-row1 { display: flex; align-items: center; gap: 6px; }
+  .tk-scan-tag {
+    font-size: 10px; font-weight: 600; border-radius: 4px; padding: 1px 6px;
+    display: flex; align-items: center; gap: 3px;
+  }
+  .tk-scan-tag-amz { background: rgba(245,158,11,0.12); color: #F59E0B; }
+  .tk-scan-tag-cj  { background: rgba(59,130,246,0.12); color: #3B82F6; }
+  .tk-scan-tag-ref { background: rgba(148,163,184,0.12); color: #94A3B8; }
+  .tk-scan-tag-short { background: rgba(239,68,68,0.12); color: #EF4444; }
+  .tk-scan-tag-fb { background: rgba(59,130,246,0.12); color: #3B82F6; }
+  .tk-scan-text { font-size: 11px; color: #5E6371; margin-left: auto; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 140px; }
+  .tk-scan-url { font-size: 11.5px; color: #9AA0AC; font-family: 'SF Mono', monospace; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+  .tk-scanner-foot {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 12px 16px 14px;
+    background: linear-gradient(to top, #0E0E10 70%, transparent);
+    display: flex; gap: 8px;
+  }
+  .tk-trace-all-btn {
+    flex: 1; background: #7C6DFA; color: #fff; border: none; border-radius: 8px;
+    font-size: 13px; font-weight: 600; padding: 9px 0; cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<div class="scene">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="grid"></div>
+
+  <div class="caption">
+    <span class="caption-badge">Page Scanner — Pro</span>
+    <h1 class="caption-title">Scan any page<br>for <em>hidden</em><br>tracking links</h1>
+    <ul class="caption-bullets">
+      <li>Finds affiliate & tracker links before you click</li>
+      <li>Trace all flagged links in one go</li>
+    </ul>
+  </div>
+
+  <div class="panel-shell">
+    <div class="tk-header">
+      <div class="tk-logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" fill="#7C6DFA" opacity=".2"/>
+          <path d="M8 12a4 4 0 018 0" stroke="#7C6DFA" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span class="tk-logo-name">TraceKit</span>
+        <span class="tk-pro-pill">PRO</span>
+      </div>
+    </div>
+
+    <div class="tk-pane-head">
+      <span class="tk-pane-title">Page link scanner</span>
+      <button class="tk-close-btn">← Back</button>
+    </div>
+
+    <div class="tk-scanner-summary">
+      Found <span class="tk-scanner-count">8 tracked links</span> on this page
+    </div>
+
+    <div class="tk-scanner-list">
+      <div class="tk-scan-item">
+        <div class="tk-scan-row1">
+          <span class="tk-scan-tag tk-scan-tag-amz">● Amazon Associates</span>
+          <span class="tk-scan-text">"Buy on Amazon"</span>
+        </div>
+        <div class="tk-scan-url">https://amzn.to/3XyZ9Qk</div>
+      </div>
+
+      <div class="tk-scan-item">
+        <div class="tk-scan-row1">
+          <span class="tk-scan-tag tk-scan-tag-cj">● CJ Affiliate</span>
+          <span class="tk-scan-text">"Best VPN deal"</span>
+        </div>
+        <div class="tk-scan-url">https://www.anrdoezrs.net/click-9876543-14…</div>
+      </div>
+
+      <div class="tk-scan-item">
+        <div class="tk-scan-row1">
+          <span class="tk-scan-tag tk-scan-tag-short">● Bitly</span>
+          <span class="tk-scan-text">"Check this out"</span>
+        </div>
+        <div class="tk-scan-url">https://bit.ly/3AbcDEF</div>
+      </div>
+
+      <div class="tk-scan-item">
+        <div class="tk-scan-row1">
+          <span class="tk-scan-tag tk-scan-tag-ref">● Referral</span>
+          <span class="tk-scan-text">"Sign up free"</span>
+        </div>
+        <div class="tk-scan-url">https://example.com/pricing?ref=newsletter42</div>
+      </div>
+
+      <div class="tk-scan-item">
+        <div class="tk-scan-row1">
+          <span class="tk-scan-tag tk-scan-tag-fb">● Facebook</span>
+          <span class="tk-scan-text">"View post"</span>
+        </div>
+        <div class="tk-scan-url">https://l.facebook.com/l.php?u=https%3A%2F%2F…</div>
+      </div>
+
+      <div class="tk-scan-item">
+        <div class="tk-scan-row1">
+          <span class="tk-scan-tag tk-scan-tag-amz">● Amazon Associates</span>
+          <span class="tk-scan-text">"Recommended gear"</span>
+        </div>
+        <div class="tk-scan-url">https://www.amazon.com/dp/B08N5KWB9H?tag=…</div>
+      </div>
+    </div>
+
+    <div class="tk-scanner-foot">
+      <button class="tk-trace-all-btn">Trace all 8 links</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>

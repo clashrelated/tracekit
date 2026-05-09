@@ -1,0 +1,12 @@
+.DS_Store
+*.log
+node_modules
+.vscode
+.idea
+
+# Built artifact (generated from icons/icon.svg via rsvg-convert; keep PNGs in repo)
+# but ignore any tooling output
+*.tmp
+.claude/
+.playwright-mcp/
+*.zip

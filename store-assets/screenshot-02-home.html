@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="screenshot-base.css">
+<style>
+  .tk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 16px 12px; border-bottom: 1px solid #1E1E26;
+  }
+  .tk-logo { display: flex; align-items: center; gap: 8px; }
+  .tk-logo-name { font-size: 15px; font-weight: 700; color: #ECEEF3; letter-spacing: -0.2px; }
+  .tk-header-right { display: flex; align-items: center; gap: 10px; }
+  .tk-hdr-icon { color: #5E6371; }
+
+  .tk-body { padding: 14px 16px; display: flex; flex-direction: column; gap: 12px; }
+
+  .tk-input-wrap {
+    display: flex; align-items: center; gap: 8px;
+    background: #15151A; border: 1px solid #25252F; border-radius: 10px;
+    padding: 10px 14px;
+  }
+  .tk-input-placeholder { font-size: 13px; color: #5E6371; }
+
+  .tk-trace-btn {
+    background: #7C6DFA; color: #fff; border: none; border-radius: 10px;
+    font-size: 14px; font-weight: 600; padding: 11px 0; width: 100%;
+    display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer;
+  }
+
+  .tk-divider {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 11px; color: #3F4451; text-transform: uppercase; letter-spacing: 0.06em;
+  }
+  .tk-divider::before, .tk-divider::after {
+    content: ''; flex: 1; height: 1px; background: #1E1E26;
+  }
+
+  .tk-recent-title {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: #5E6371; margin-bottom: 6px;
+  }
+  .tk-recent-list { display: flex; flex-direction: column; gap: 6px; }
+
+  .tk-hist-item {
+    background: #1A1A1F; border: 1px solid #25252F; border-radius: 10px;
+    padding: 9px 12px; display: flex; flex-direction: column; gap: 4px;
+  }
+  .tk-hist-row1 { display: flex; justify-content: space-between; }
+  .tk-hist-stats { font-size: 11px; color: #5E6371; }
+  .tk-hist-when { font-size: 11px; color: #5E6371; }
+  .tk-hist-url { font-size: 12px; color: #9AA0AC; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .tk-hist-tags { display: flex; gap: 4px; margin-top: 2px; }
+  .tk-hist-tag {
+    font-size: 10px; font-weight: 600; border-radius: 4px; padding: 1px 6px;
+    display: flex; align-items: center; gap: 3px;
+  }
+  .tk-hist-tag-fb { background: rgba(59,130,246,0.12); color: #3B82F6; }
+  .tk-hist-tag-amz { background: rgba(245,158,11,0.12); color: #F59E0B; }
+  .tk-hist-tag-ref { background: rgba(148,163,184,0.12); color: #94A3B8; }
+
+  .tk-view-all {
+    font-size: 12px; color: #5E6371; text-align: center; margin-top: 2px;
+    border: none; background: none; cursor: pointer; width: 100%;
+  }
+</style>
+</head>
+<body>
+<div class="scene">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="grid"></div>
+
+  <div class="caption">
+    <span class="caption-badge">Quick Access</span>
+    <h1 class="caption-title">Your trace<br><em>history</em>, always<br>at hand</h1>
+    <ul class="caption-bullets">
+      <li>Recent traces always on the home screen</li>
+      <li>Right-click any link to trace instantly</li>
+    </ul>
+  </div>
+
+  <div class="panel-shell">
+    <div class="tk-header">
+      <div class="tk-logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" fill="#7C6DFA" opacity=".2"/>
+          <path d="M8 12a4 4 0 018 0" stroke="#7C6DFA" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span class="tk-logo-name">TraceKit</span>
+      </div>
+      <div class="tk-header-right">
+        <svg class="tk-hdr-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/>
+          <rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/>
+          <rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/>
+          <rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/>
+        </svg>
+        <svg class="tk-hdr-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <svg class="tk-hdr-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" stroke="currentColor" stroke-width="1.6"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="tk-body">
+      <div class="tk-input-wrap">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+          <path d="M10 13a4 4 0 005.66 0l3-3a4 4 0 00-5.66-5.66l-1 1" stroke="#5E6371" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M14 11a4 4 0 00-5.66 0l-3 3a4 4 0 005.66 5.66l1-1" stroke="#5E6371" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <span class="tk-input-placeholder">Paste a URL to trace…</span>
+      </div>
+
+      <button class="tk-trace-btn">
+        Trace
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <div class="tk-divider">or right-click any link</div>
+
+      <div>
+        <div class="tk-recent-title">Recent traces</div>
+        <div class="tk-recent-list">
+          <div class="tk-hist-item">
+            <div class="tk-hist-row1">
+              <span class="tk-hist-stats">3 hops · 842ms</span>
+              <span class="tk-hist-when">2m ago</span>
+            </div>
+            <div class="tk-hist-url">https://www.amazon.com/dp/B09XKM84VP</div>
+            <div class="tk-hist-tags"><span class="tk-hist-tag tk-hist-tag-amz">● Amazon Associates</span></div>
+          </div>
+
+          <div class="tk-hist-item">
+            <div class="tk-hist-row1">
+              <span class="tk-hist-stats">2 hops · 310ms</span>
+              <span class="tk-hist-when">18m ago</span>
+            </div>
+            <div class="tk-hist-url">https://www.facebook.com/BhaktiSagarTseries/</div>
+            <div class="tk-hist-tags"><span class="tk-hist-tag tk-hist-tag-fb">● Facebook</span></div>
+          </div>
+
+          <div class="tk-hist-item">
+            <div class="tk-hist-row1">
+              <span class="tk-hist-stats">5 hops · 1.2s</span>
+              <span class="tk-hist-when">1h ago</span>
+            </div>
+            <div class="tk-hist-url">https://shop.example.com/product/wireless-earbuds</div>
+            <div class="tk-hist-tags"><span class="tk-hist-tag tk-hist-tag-ref">● Referral</span></div>
+          </div>
+
+          <div class="tk-hist-item">
+            <div class="tk-hist-row1">
+              <span class="tk-hist-stats">1 hop · 98ms</span>
+              <span class="tk-hist-when">3h ago</span>
+            </div>
+            <div class="tk-hist-url">https://news.ycombinator.com/item?id=40291847</div>
+          </div>
+        </div>
+        <button class="tk-view-all">View all history →</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
