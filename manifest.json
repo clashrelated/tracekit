@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "TraceKit — Redirect & Affiliate Inspector",
   "short_name": "TraceKit",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Reveal the full redirect chain behind any link. Spot affiliate networks, tracking params, and the real final URL — instantly.",
   "author": "TraceKit",
   "minimum_chrome_version": "114",
